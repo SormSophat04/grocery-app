@@ -35,12 +35,14 @@ class CustomTextField extends StatelessWidget {
               fontFamily: 'Poppins',
               color: Colors.grey,
             ),
-            icon: Image.asset(
-              imageIcon,
-              width: 30,
-              height: 30,
-              color: Colors.grey,
-            ),
+            icon: imageIcon == ''
+                ? null
+                : Image.asset(
+                    imageIcon,
+                    width: 30,
+                    height: 30,
+                    color: Colors.grey,
+                  ),
           ),
         ),
       ),

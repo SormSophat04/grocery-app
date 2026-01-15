@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:groceries_app/core/theme/app_color.dart';
+import 'package:groceries_app/features/presentation/cart/view/cart_view.dart';
 import 'package:groceries_app/features/presentation/favorite/favorite_view.dart';
 import 'package:groceries_app/features/presentation/home/home_view.dart';
-import 'package:groceries_app/features/presentation/profile/profile_view.dart';
+import 'package:groceries_app/features/presentation/profile/view/profile_view.dart';
 
 class CustomNavBar extends StatefulWidget {
   const CustomNavBar({super.key});
@@ -11,7 +13,7 @@ class CustomNavBar extends StatefulWidget {
   State<CustomNavBar> createState() => _CustomNavBarState();
 }
 
-final List _pages = const [HomeView(), ProfileView(), FavoriteView()];
+final List _pages = [const HomeView(), const ProfileView(), FavoriteView()];
 
 class _CustomNavBarState extends State<CustomNavBar> {
   int selectedIndex = 0;
@@ -21,14 +23,20 @@ class _CustomNavBarState extends State<CustomNavBar> {
       body: _pages[selectedIndex],
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       extendBody: true,
-      floatingActionButton: CircleAvatar(
-        backgroundColor: AppColor.primaryDark,
-        radius: 30,
-        child: Image.asset(
-          'assets/icons/nav_bar/shopping-bag.png',
-          height: 34,
-          width: 34,
-          color: Colors.white,
+      floatingActionButton: GestureDetector(
+        onTap: () => Get.to(() => CartView()),
+        child: Container(
+          margin: const EdgeInsets.only(right: 15),
+          child: CircleAvatar(
+            backgroundColor: AppColor.primaryDark,
+            radius: 30,
+            child: Image.asset(
+              'assets/icons/nav_bar/shopping-bag.png',
+              height: 34,
+              width: 34,
+              color: Colors.white,
+            ),
+          ),
         ),
       ),
       bottomNavigationBar: Container(

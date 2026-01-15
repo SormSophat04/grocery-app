@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:groceries_app/core/theme/app_color.dart';
 import 'package:groceries_app/core/widgets/custom_button.dart';
 import 'package:groceries_app/core/widgets/custom_text_field.dart';
-import 'package:groceries_app/features/presentation/auth/sign_up_view.dart';
+import 'package:groceries_app/features/presentation/auth/view/sign_up_view.dart';
 
 class CustomLoginContain extends StatelessWidget {
   const CustomLoginContain({super.key});

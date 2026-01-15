@@ -44,7 +44,7 @@ class CustomButton extends StatelessWidget {
             Container(
               height: 22,
               width: 22,
-              decoration: imageIconRight != ''
+              decoration: imageIconLeft == ''
                   ? null
                   : BoxDecoration(
                       image: DecorationImage(
@@ -68,12 +68,15 @@ class CustomButton extends StatelessWidget {
             Container(
               height: 22,
               width: 22,
-              decoration: imageIconLeft != ''
+              decoration: imageIconRight == ''
                   ? null
                   : BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(imageIconRight),
                         fit: BoxFit.cover,
+                        colorFilter: backgroundColor == Colors.white
+                            ? null
+                            : ColorFilter.mode(Colors.white, BlendMode.srcIn),
                       ),
                     ),
             ),

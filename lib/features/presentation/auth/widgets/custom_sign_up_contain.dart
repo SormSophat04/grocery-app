@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:groceries_app/core/theme/app_color.dart';
 import 'package:groceries_app/core/widgets/custom_button.dart';
 import 'package:groceries_app/core/widgets/custom_text_field.dart';
-import 'package:groceries_app/features/presentation/auth/login_view.dart';
+import 'package:groceries_app/features/presentation/auth/view/login_view.dart';
+import 'package:groceries_app/features/presentation/auth/view/verify_number_view.dart';
 
 class CustomSignUpContain extends StatelessWidget {
   const CustomSignUpContain({super.key});
@@ -58,6 +59,7 @@ class CustomSignUpContain extends StatelessWidget {
           ),
           SizedBox(height: 27),
           CustomButton(
+            onTap: () => Get.to(() => VerifyNumberView()),
             imageIconRight: '',
             textButton: 'Sign Up',
             imageIconLeft: '',

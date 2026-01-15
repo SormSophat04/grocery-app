@@ -31,13 +31,15 @@ class _SplashViewState extends State<SplashView> {
     {
       'img': 'assets/images/Passionate-cuate 1.png',
       'title': 'Enjoy Quality Food',
-      'subTitle': 'Savor fresh and high-quality food with every order you place',
+      'subTitle':
+          'Savor fresh and high-quality food with every order you place',
     },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.backgroundSecondary,
       body: Column(
         children: [
           const SizedBox(height: 100),
@@ -95,7 +97,7 @@ class _SplashViewState extends State<SplashView> {
               aspectRatio: 16 / 9,
               onPageChanged: (index, reason) {
                 setState(() {
-                  currentIndex = index+1;
+                  currentIndex = index + 1;
                 });
               },
               initialPage: 0,
