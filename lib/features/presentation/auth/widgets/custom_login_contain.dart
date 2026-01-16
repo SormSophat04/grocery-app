@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:groceries_app/core/theme/app_color.dart';
 import 'package:groceries_app/core/widgets/custom_button.dart';
 import 'package:groceries_app/core/widgets/custom_text_field.dart';
+import 'package:groceries_app/features/presentation/auth/view/forgot_pass_view.dart';
 import 'package:groceries_app/features/presentation/auth/view/sign_up_view.dart';
 
 class CustomLoginContain extends StatelessWidget {
@@ -63,13 +64,16 @@ class CustomLoginContain extends StatelessWidget {
                   fontFamily: 'Poppins',
                 ),
               ),
-              Text(
-                "Forgot Password?",
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'Poppins',
-                  color: Colors.lightBlueAccent,
+              GestureDetector(
+                onTap: () => Get.to(() => ForgotPassView()),
+                child: Text(
+                  "Forgot Password?",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Poppins',
+                    color: Colors.lightBlueAccent,
+                  ),
                 ),
               ),
             ],

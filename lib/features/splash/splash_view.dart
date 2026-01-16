@@ -116,7 +116,7 @@ class _SplashViewState extends State<SplashView> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   GestureDetector(
-                    onTap: () => Get.to(() => WelcomeView()),
+                    onTap: () => Get.offAll(() => WelcomeView()),
                     child: Text(
                       "Skip",
                       style: TextStyle(
@@ -141,7 +141,7 @@ class _SplashViewState extends State<SplashView> {
                   GestureDetector(
                     onTap: () {
                       if (currentIndex == sliders.length - 1) {
-                        Get.to(() => WelcomeView());
+                        Get.offAll(() => WelcomeView());
                       } else {
                         setState(() {
                           currentIndex += 1;

@@ -105,41 +105,43 @@ class _HomeViewState extends State<HomeView> {
       backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60),
-        child: Container(
-          height: 60,
-          width: double.infinity,
-          margin: const EdgeInsets.only(
-            left: 16,
-            right: 16,
-            top: 40,
-            bottom: 10,
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          decoration: BoxDecoration(
-            color: AppColor.backgroundSecondary,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Row(
-            children: [
-              Image.asset(
-                'assets/icons/search.png',
-                height: 20,
-                width: 20,
-                color: Colors.grey,
-              ),
-              SizedBox(width: 16),
-              const Text(
-                'Search here',
-                style: TextStyle(color: Colors.grey, fontSize: 15),
-              ),
-              const Spacer(),
-              Image.asset(
-                'assets/icons/menu.png',
-                height: 20,
-                width: 20,
-                color: Colors.grey,
-              ),
-            ],
+        child: GestureDetector(
+          child: Container(
+            height: 60,
+            width: double.infinity,
+            margin: const EdgeInsets.only(
+              left: 16,
+              right: 16,
+              top: 40,
+              bottom: 10,
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            decoration: BoxDecoration(
+              color: AppColor.backgroundSecondary,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/icons/search.png',
+                  height: 20,
+                  width: 20,
+                  color: Colors.grey,
+                ),
+                SizedBox(width: 16),
+                const Text(
+                  'Search here',
+                  style: TextStyle(color: Colors.grey, fontSize: 15),
+                ),
+                const Spacer(),
+                Image.asset(
+                  'assets/icons/menu.png',
+                  height: 20,
+                  width: 20,
+                  color: Colors.grey,
+                ),
+              ],
+            ),
           ),
         ),
       ),

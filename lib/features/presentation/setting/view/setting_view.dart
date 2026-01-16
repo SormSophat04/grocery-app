@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:groceries_app/core/theme/app_color.dart';
 import 'package:groceries_app/core/widgets/custom_app_bar.dart';
+import 'package:groceries_app/features/presentation/setting/view/address/address_view.dart';
+import 'package:groceries_app/features/presentation/setting/view/payment/payment_view.dart';
+import 'package:groceries_app/features/presentation/setting/view/transaction_view.dart';
 import 'package:groceries_app/features/presentation/setting/widgets/custom_setting_button.dart';
 
 class SettingView extends StatelessWidget {
@@ -28,9 +32,23 @@ class SettingView extends StatelessWidget {
                   style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
                 ),
                 SizedBox(height: 14),
-                CustomSettingButton(myAcc: 'My addresses', icon: ''),
+                CustomSettingButton(
+                  myAcc: 'My addresses',
+                  icon: '',
+                  onTap: () => Get.to(() => AddressView()),
+                ),
                 SizedBox(height: 11),
-                CustomSettingButton(myAcc: 'Transaction', icon: ''),
+                CustomSettingButton(
+                  myAcc: 'Payment methods',
+                  icon: '',
+                  onTap: () => Get.to(() => PaymentView()),
+                ),
+                SizedBox(height: 11),
+                CustomSettingButton(
+                  myAcc: 'Transaction',
+                  icon: '',
+                  onTap: () => Get.to(() => TransactionView()),
+                ),
                 SizedBox(height: 11),
               ],
             ),

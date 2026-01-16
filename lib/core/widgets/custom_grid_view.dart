@@ -19,18 +19,17 @@ class CustomGridView extends StatelessWidget {
         mainAxisSpacing: 15,
         childAspectRatio: 0.68,
       ),
-      itemBuilder: (context, index) => GestureDetector(
-        onTap: () {
-          Get.to(() => ProductDetailView(), arguments: featuredProducts[index]);
-        },
-        child: FeaturedProductCard(
-          name: featuredProducts[index]['name'] ?? '',
-          price: featuredProducts[index]['price'] ?? '',
-          image: featuredProducts[index]['image'] ?? '',
-          status: featuredProducts[index]['status'] ?? '',
-          unit: featuredProducts[index]['unit'] ?? '',
-          fav: featuredProducts[index]['fav'] ?? false,
+      itemBuilder: (context, index) => FeaturedProductCard(
+        onTapDetail: () => Get.to(
+          () => ProductDetailView(),
+          arguments: featuredProducts[index],
         ),
+        name: featuredProducts[index]['name'] ?? '',
+        price: featuredProducts[index]['price'] ?? '',
+        image: featuredProducts[index]['image'] ?? '',
+        status: featuredProducts[index]['status'] ?? '',
+        unit: featuredProducts[index]['unit'] ?? '',
+        fav: featuredProducts[index]['fav'] ?? false,
       ),
     );
   }

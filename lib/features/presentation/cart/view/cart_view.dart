@@ -6,9 +6,14 @@ import 'package:groceries_app/core/widgets/custom_button.dart';
 import 'package:groceries_app/core/widgets/custom_product_listview.dart';
 import 'package:groceries_app/features/presentation/cart/view/cart_method_view.dart';
 
-class CartView extends StatelessWidget {
-  CartView({super.key});
+class CartView extends StatefulWidget {
+  const CartView({super.key});
 
+  @override
+  State<CartView> createState() => _CartViewState();
+}
+
+class _CartViewState extends State<CartView> {
   List<dynamic> favoritesProducts = [
     {
       "id": 1,
