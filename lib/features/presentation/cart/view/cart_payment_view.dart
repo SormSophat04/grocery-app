@@ -4,10 +4,9 @@ import 'package:groceries_app/core/theme/app_color.dart';
 import 'package:groceries_app/core/widgets/custom_app_bar.dart';
 import 'package:groceries_app/core/widgets/custom_button.dart';
 import 'package:groceries_app/core/widgets/custom_shipping_status.dart';
-import 'package:groceries_app/features/presentation/cart/view/cart_address_view.dart';
 
-class CartMethodView extends StatelessWidget {
-  const CartMethodView({super.key});
+class CartPaymentView extends StatelessWidget {
+  const CartPaymentView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class CartMethodView extends StatelessWidget {
       backgroundColor: AppColor.backgroundSecondary,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(110),
-        child: CustomAppBar(title: 'Shipping Method', actionIcon: ''),
+        child: CustomAppBar(title: 'Shipping Payment', actionIcon: ''),
       ),
       body: Container(
         height: double.infinity,
@@ -34,9 +33,9 @@ class CartMethodView extends StatelessWidget {
                         vertical: 20,
                       ),
                       child: CustomShippingStatus(
-                        color2: false,
-                        color3: false,
-                        line2: false,
+                        color2: true,
+                        color3: true,
+                        line2: true,
                       ),
                     ),
                   ],
@@ -48,7 +47,7 @@ class CartMethodView extends StatelessWidget {
               left: 16,
               right: 16,
               child: CustomButton(
-                onTap: () => Get.to(() => CartAddressView()),
+                onTap: () => Get.to(() => CartPaymentView()),
                 imageIconRight: '',
                 textButton: 'Next',
                 imageIconLeft: '',
