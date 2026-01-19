@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:groceries_app/core/theme/app_color.dart';
 import 'package:groceries_app/core/widgets/custom_grid_view.dart';
 import 'package:groceries_app/features/presentation/category/category_view.dart';
+import 'package:groceries_app/features/presentation/home/search_view.dart';
 import 'package:groceries_app/features/presentation/product/view/product_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -20,7 +21,6 @@ List<dynamic> categories = [
   {'name': 'Grocery', 'icon': 'assets/icons/categories/Group 245.png'},
   {'name': 'Edible Oil', 'icon': 'assets/icons/categories/Group 246.png'},
   {'name': 'Household', 'icon': 'assets/icons/categories/Group 247.png'},
-  // {'name': 'Baby Care', 'icon': 'assets/icons/categories/Group 240.png'},
 ];
 
 List<dynamic> featuredProducts = [
@@ -106,6 +106,7 @@ class _HomeViewState extends State<HomeView> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60),
         child: GestureDetector(
+          onTap: () => Get.to(() => SearchView()),
           child: Container(
             height: 60,
             width: double.infinity,

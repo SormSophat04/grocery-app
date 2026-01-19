@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app/core/theme/app_color.dart';
 import 'package:groceries_app/core/widgets/custom_app_bar.dart';
+import 'package:groceries_app/core/widgets/custom_grid_view.dart';
 import 'package:groceries_app/core/widgets/custom_product_listview.dart';
 
 class FavoriteView extends StatefulWidget {
@@ -31,7 +32,7 @@ class _FavoriteViewState extends State<FavoriteView> {
       "image": "assets/images/pineapple-pieces.png",
       "status": "New",
       "unit": "1kg",
-      "fav": false,
+      "fav": true,
       "rate": 4.5,
       "description":
           "Organic Mountain works as a seller for many organic growers of organic lemons. Organic lemons are easy to spot in your produce aisle. They are just like regular lemons, but they will usually have a few more scars on the outside of the lemon skin. Organic lemons are considered to be the world's finest lemon for juicing",
@@ -48,18 +49,6 @@ class _FavoriteViewState extends State<FavoriteView> {
       "description":
           "Organic Mountain works as a seller for many organic growers of organic lemons. Organic lemons are easy to spot in your produce aisle. They are just like regular lemons, but they will usually have a few more scars on the outside of the lemon skin. Organic lemons are considered to be the world's finest lemon for juicing",
     },
-    {
-      "id": 4,
-      "name": "Orange",
-      "price": "5.49",
-      "image": "assets/images/Group 247 (1).png",
-      // "status": "5% Off",
-      "unit": "1kg",
-      "fav": false,
-      "rate": 4.5,
-      "description":
-          "Organic Mountain works as a seller for many organic growers of organic lemons. Organic lemons are easy to spot in your produce aisle. They are just like regular lemons, but they will usually have a few more scars on the outside of the lemon skin. Organic lemons are considered to be the world's finest lemon for juicing",
-    },
   ];
 
   @override
@@ -70,19 +59,9 @@ class _FavoriteViewState extends State<FavoriteView> {
         preferredSize: Size.fromHeight(110),
         child: CustomAppBar(title: 'Favorites', actionIcon: ''),
       ),
-      body: ListView.builder(
-        shrinkWrap: true,
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-        itemCount: favoritesProducts.length,
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5),
-          child: CustomProductListview(
-            name: favoritesProducts[index]['name'],
-            price: favoritesProducts[index]['price'],
-            unit: favoritesProducts[index]['unit'],
-            imgage: favoritesProducts[index]['image'],
-          ),
-        ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        child: CustomGridView(featuredProducts: favoritesProducts),
       ),
     );
   }

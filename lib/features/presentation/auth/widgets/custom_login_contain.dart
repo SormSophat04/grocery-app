@@ -44,12 +44,14 @@ class CustomLoginContain extends StatelessWidget {
             hintText: 'Enter your email',
             imageIcon: 'assets/icons/email.png',
             obscureText: false,
+            keyboardType: TextInputType.emailAddress,
           ),
           SizedBox(height: 12),
           CustomTextField(
             hintText: 'Enter your password',
             imageIcon: 'assets/icons/lock.png',
             obscureText: true,
+            keyboardType: TextInputType.visiblePassword,
           ),
           SizedBox(height: 12),
           Row(

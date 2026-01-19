@@ -53,6 +53,7 @@ class ForgotPassView extends StatelessWidget {
                     hintText: 'Enter your email',
                     imageIcon: 'assets/icons/email.png',
                     obscureText: false,
+                    keyboardType: TextInputType.emailAddress,
                   ),
 
                   SizedBox(height: 20),

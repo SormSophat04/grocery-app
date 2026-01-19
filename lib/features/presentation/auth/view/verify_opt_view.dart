@@ -4,6 +4,7 @@ import 'package:groceries_app/core/theme/app_color.dart';
 import 'package:groceries_app/core/widgets/custom_app_bar.dart';
 import 'package:groceries_app/core/widgets/custom_button.dart';
 import 'package:groceries_app/core/widgets/custom_nav_bar.dart';
+import 'package:groceries_app/core/widgets/custom_pininput.dart';
 
 class VerifyOptView extends StatelessWidget {
   const VerifyOptView({super.key});
@@ -47,32 +48,7 @@ class VerifyOptView extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: 40),
-                  Container(
-                    height: 50,
-                    width: double.infinity,
-                    padding: EdgeInsets.only(left: 17),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      color: AppColor.backgroundEnd,
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 80,
-                          height: 50,
-                          decoration: BoxDecoration(
-                            border: Border(
-                              right: BorderSide(
-                                color: AppColor.border,
-                                width: 1,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(width: 200, height: 50),
-                      ],
-                    ),
-                  ),
+                  CustomPininput(),
                   SizedBox(height: 20),
                   CustomButton(
                     onTap: () => Get.to(() => CustomNavBar()),

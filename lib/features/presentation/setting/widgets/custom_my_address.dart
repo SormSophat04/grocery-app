@@ -6,12 +6,14 @@ class CustomMyAddress extends StatelessWidget {
   final String phoneNumber;
   final String address;
   final String cardImage;
+  final String actionIcon;
   const CustomMyAddress({
     super.key,
     required this.name,
     required this.cardImage,
     required this.phoneNumber,
     required this.address,
+    required this.actionIcon,
   });
 
   @override
@@ -78,13 +80,18 @@ class CustomMyAddress extends StatelessWidget {
           Container(
             height: 26,
             width: 26,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/icons/edit_card.png'),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(Colors.grey, BlendMode.srcIn),
-              ),
-            ),
+            decoration: actionIcon == ''
+                ? null
+                : BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(actionIcon),
+                      fit: BoxFit.cover,
+                      colorFilter: ColorFilter.mode(
+                        Colors.grey,
+                        BlendMode.srcIn,
+                      ),
+                    ),
+                  ),
           ),
         ],
       ),

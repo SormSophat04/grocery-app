@@ -41,6 +41,7 @@ dependencies:
   dots_indicator: ^4.0.1
   flutter_slidable: ^4.0.3
   flutter_credit_card: ^4.1.0
+  pinput: ^6.0.1
 
 dev_dependencies:
   flutter_test:

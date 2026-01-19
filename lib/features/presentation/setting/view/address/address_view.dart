@@ -30,6 +30,7 @@ class AddressView extends StatelessWidget {
           cardImage: 'assets/icons/pin.png',
           phoneNumber: '099-432-8372',
           address: '2811 Crescent Day. LA Port California, United States 77571',
+          actionIcon: 'assets/icons/pin.svg',
         ),
       ),
     );

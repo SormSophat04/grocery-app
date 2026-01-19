@@ -11,7 +11,7 @@ class VerifyNumberView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.backgroundWhite,
+      backgroundColor: AppColor.backgroundSecondary,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(110),
         child: CustomAppBar(title: "Verify Number", actionIcon: ''),
@@ -48,19 +48,19 @@ class VerifyNumberView extends StatelessWidget {
                   ),
                   SizedBox(height: 40),
                   Container(
-                    height: 50,
+                    height: 60,
                     width: double.infinity,
-                    padding: EdgeInsets.only(left: 17),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                      color: AppColor.backgroundEnd,
+                      borderRadius: BorderRadius.circular(12),
+                      color: AppColor.backgroundWhite,
                     ),
                     child: Row(
                       children: [
                         Container(
-                          width: 80,
+                          width: 110,
                           height: 50,
                           decoration: BoxDecoration(
+                            // color: Colors.amber,
                             border: Border(
                               right: BorderSide(
                                 color: AppColor.border,
@@ -68,8 +68,58 @@ class VerifyNumberView extends StatelessWidget {
                               ),
                             ),
                           ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 10),
+                            child: Row(
+                              // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Image.asset(
+                                  'assets/images/cambodia.png',
+                                  width: 30,
+                                  height: 30,
+                                ),
+                                SizedBox(width: 4),
+                                Text(
+                                  '+855',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  color: Colors.grey,
+                                  size: 24,
+                                ),
+                                // Image.asset(
+                                //   'assets/images/cambodia.png',
+                                //   width: 30,
+                                //   height: 30,
+                                // ),
+                              ],
+                            ),
+                          ),
                         ),
-                        Container(width: 200, height: 50),
+                        Container(
+                          width: 200,
+                          height: 50,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: TextField(
+                            keyboardType: TextInputType.phone,
+                            // maxLength: 10,
+                            decoration: InputDecoration(
+                              hintText: '012 345 678',
+                              border: InputBorder.none,
+                              hintStyle: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: 'Poppins',
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),

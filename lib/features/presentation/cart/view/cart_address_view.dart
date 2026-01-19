@@ -5,6 +5,8 @@ import 'package:groceries_app/core/widgets/custom_app_bar.dart';
 import 'package:groceries_app/core/widgets/custom_button.dart';
 import 'package:groceries_app/core/widgets/custom_shipping_status.dart';
 import 'package:groceries_app/features/presentation/cart/view/cart_payment_view.dart';
+import 'package:groceries_app/features/presentation/setting/view/address/address_view.dart';
+import 'package:groceries_app/features/presentation/setting/widgets/custom_my_address.dart';
 
 class CartAddressView extends StatelessWidget {
   const CartAddressView({super.key});
@@ -37,6 +39,23 @@ class CartAddressView extends StatelessWidget {
                         color2: true,
                         color3: false,
                         line2: false,
+                      ),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: 3,
+                      padding: EdgeInsets.symmetric(
+                        vertical: 16,
+                        horizontal: 6,
+                      ),
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, index) => CustomMyAddress(
+                        name: 'Home',
+                        cardImage: 'assets/icons/pin.png',
+                        phoneNumber: '099-432-8372',
+                        address:
+                            '2811 Crescent Day. LA Port California, United States 77571',
+                        actionIcon: '',
                       ),
                     ),
                   ],

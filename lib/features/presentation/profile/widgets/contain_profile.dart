@@ -52,6 +52,7 @@ class ContainProfile extends StatelessWidget {
               'assets/icons/setting.png',
               height: AppSize.h32,
               width: AppSize.h32,
+              color: Colors.grey,
             ),
           ),
         ],
