@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:groceries_app/core/theme/app_color.dart';
 import 'package:groceries_app/core/widgets/custom_app_bar.dart';
+import 'package:groceries_app/features/presentation/auth/view/login_view.dart';
 import 'package:groceries_app/features/presentation/setting/view/address/address_view.dart';
 import 'package:groceries_app/features/presentation/setting/view/notification_view.dart';
 import 'package:groceries_app/features/presentation/setting/view/payment/payment_view.dart';
+import 'package:groceries_app/features/presentation/setting/view/switch_lang.dart';
 import 'package:groceries_app/features/presentation/setting/view/transaction_view.dart';
 import 'package:groceries_app/features/presentation/setting/widgets/custom_setting_button.dart';
 
@@ -74,6 +76,12 @@ class SettingView extends StatelessWidget {
                   onTap: () => Get.to(() => NotificationView()),
                 ),
                 SizedBox(height: 11),
+                CustomSettingButton(
+                  myAcc: 'Language',
+                  icon: '',
+                  onTap: () => Get.to(() => SwitchLang()),
+                ),
+                SizedBox(height: 11),
               ],
             ),
           ),
@@ -104,19 +112,22 @@ class SettingView extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  height: 50,
-                  width: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    color: AppColor.backgroundWhite,
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Logout',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
+                GestureDetector(
+                  onTap: () => Get.to(() => LoginScreen()),
+                  child: Container(
+                    height: 50,
+                    width: 150,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: AppColor.backgroundWhite,
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Logout',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ),

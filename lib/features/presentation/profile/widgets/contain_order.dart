@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:groceries_app/core/constants/app_icon_size.dart';
 import 'package:groceries_app/core/constants/app_size.dart';
 import 'package:groceries_app/core/theme/app_color.dart';
+import 'package:groceries_app/features/presentation/profile/view/test3d_images.dart';
 
 class ContainOrder extends StatelessWidget {
   const ContainOrder({super.key});
@@ -59,27 +61,30 @@ class ContainOrder extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                height: AppSize.h60 + AppSize.h8,
-                width: AppSize.h60 + AppSize.h8,
-                // color: Colors.lightBlueAccent,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/icons/my_order/package.png',
-                      height: AppIconSize.xl,
-                      width: AppIconSize.xl,
-                    ),
-                    SizedBox(height: AppSize.h4),
-                    Text(
-                      "Package",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
+              GestureDetector(
+                onTap: () => Get.to(() => Test3dImages()),
+                child: Container(
+                  height: AppSize.h60 + AppSize.h8,
+                  width: AppSize.h60 + AppSize.h8,
+                  // color: Colors.lightBlueAccent,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/icons/my_order/package.png',
+                        height: AppIconSize.xl,
+                        width: AppIconSize.xl,
                       ),
-                    ),
-                  ],
+                      SizedBox(height: AppSize.h4),
+                      Text(
+                        "Package",
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(

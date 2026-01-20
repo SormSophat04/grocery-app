@@ -10,56 +10,54 @@ class SearchView extends StatelessWidget {
       backgroundColor: AppColor.backgroundSecondary,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(110),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              margin: const EdgeInsets.only(
-                left: 16,
-                right: 16,
-                top: 40,
-                bottom: 10,
+        child: Container(
+          height: 56,
+          width: double.infinity,
+          margin: const EdgeInsets.only(
+            left: 16,
+            right: 16,
+            top: 40,
+            bottom: 10,
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          decoration: BoxDecoration(
+            color: AppColor.backgroundWhite,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Row(
+            children: [
+              Image.asset(
+                'assets/icons/search.png',
+                height: 20,
+                width: 20,
+                color: Colors.grey,
               ),
-              child: Icon(Icons.arrow_back_ios_rounded, weight: 22),
-            ),
-            Container(
-              height: 60,
-              width: double.infinity,
-              margin: const EdgeInsets.only(
-                left: 16,
-                right: 16,
-                top: 40,
-                bottom: 10,
-              ),
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              decoration: BoxDecoration(
-                color: AppColor.link,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/icons/search.png',
-                    height: 20,
-                    width: 20,
-                    color: Colors.grey,
+              SizedBox(width: 16),
+              Container(
+                width: 200,
+                child: TextField(
+                  keyboardType: TextInputType.text,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
                   ),
-                  SizedBox(width: 16),
-                  const Text(
-                    'Search here',
-                    style: TextStyle(color: Colors.grey, fontSize: 15),
+                  decoration: InputDecoration(
+                    hintText: 'Search Store',
+                    border: InputBorder.none,
+                    hintStyle: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
-                  const Spacer(),
-                  Image.asset(
-                    'assets/icons/menu.png',
-                    height: 20,
-                    width: 20,
-                    color: Colors.grey,
-                  ),
-                ],
+                ),
               ),
-            ),
-          ],
+              const Spacer(),
+              Image.asset(
+                'assets/icons/menu.png',
+                height: 20,
+                width: 20,
+                color: Colors.grey,
+              ),
+            ],
+          ),
         ),
       ),
       body: Center(child: Text('Search View')),

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:groceries_app/core/theme/app_color.dart';
 import 'package:groceries_app/core/widgets/custom_grid_view.dart';
 import 'package:groceries_app/features/presentation/category/category_view.dart';
+import 'package:groceries_app/features/presentation/home/filter_view.dart';
 import 'package:groceries_app/features/presentation/home/search_view.dart';
 import 'package:groceries_app/features/presentation/product/view/product_view.dart';
 
@@ -135,11 +136,14 @@ class _HomeViewState extends State<HomeView> {
                   style: TextStyle(color: Colors.grey, fontSize: 15),
                 ),
                 const Spacer(),
-                Image.asset(
-                  'assets/icons/menu.png',
-                  height: 20,
-                  width: 20,
-                  color: Colors.grey,
+                GestureDetector(
+                  onTap: () => Get.to(() => FilterView()),
+                  child: Image.asset(
+                    'assets/icons/menu.png',
+                    height: 20,
+                    width: 20,
+                    color: Colors.grey,
+                  ),
                 ),
               ],
             ),
